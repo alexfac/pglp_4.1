@@ -5,16 +5,25 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import java.util.List;
+
 /**
  * Unit test for simple App.
  */
 public class AppTest 
 {
     @Test
-    public void testInitperso() {
+    public void testInitperso(){
         Personnel personnel = new Personnel.Builder("Test", "Test", "Testeur").build();
         assertEquals("Test", personnel.getNom());
         assertEquals("Test", personnel.getPrenom());
         assertEquals("Testeur", personnel.getFonction());
+    }
+
+    @Test
+    public void testAddtel(){
+        String Tel = "0130333909";
+        Personnel personnel = new Personnel.Builder("Test", "Test", "Testeur").addTel(Tel).build();
+        assertEquals(personnel.getTel().get(0), Tel);
     }
 }

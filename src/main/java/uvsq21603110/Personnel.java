@@ -1,6 +1,8 @@
 package uvsq21603110;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public final class Personnel {
@@ -15,17 +17,23 @@ public final class Personnel {
         private final String Nom;
         private final String Prenom;
         private final String Fonction;
-        private final LocalDate Naissance = LocalDate.now();
-        private final List<String> Telephone = null;
+        private LocalDate Naissance = LocalDate.now();
+        private List<String> Telephone = null;
 
         public Builder(String nom, String prenom, String fonction){
             this.Nom = nom;
             this.Prenom = prenom;
             this.Fonction = fonction;
+            this.Telephone = new ArrayList<>();
         }
 
+        /*public Builder addNaissance(LocalDate d){
+            this.Naissance = d;
+            return this;
+        }*/
+
         public Builder addTel(String tel){
-            Telephone.add(tel);
+            this.Telephone.add(tel);
             return this;
         }
 
@@ -50,5 +58,8 @@ public final class Personnel {
     }
     public String getFonction(){
         return this.Fonction;
+    }
+    public List getTel(){
+        return Collections.unmodifiableList(this.Telephone);
     }
 }

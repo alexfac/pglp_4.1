@@ -27,10 +27,10 @@ public final class Personnel {
             this.Telephone = new ArrayList<>();
         }
 
-        /*public Builder addNaissance(LocalDate d){
+        public Builder addNaissance(LocalDate d){
             this.Naissance = d;
             return this;
-        }*/
+        }
 
         public Builder addTel(String tel){
             this.Telephone.add(tel);
@@ -61,5 +61,8 @@ public final class Personnel {
     }
     public List getTel(){
         return Collections.unmodifiableList(this.Telephone);
+    }
+    public LocalDate getNaissance(){
+        return this.Naissance;
     }
 }

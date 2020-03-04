@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -25,5 +26,12 @@ public class AppTest
         String Tel = "0130333909";
         Personnel personnel = new Personnel.Builder("Test", "Test", "Testeur").addTel(Tel).build();
         assertEquals(personnel.getTel().get(0), Tel);
+    }
+
+    @Test
+    public void testAddnaissance(){
+        LocalDate naissance = LocalDate.now();
+        Personnel personnel = new Personnel.Builder("Test", "Test", "Testeur").addNaissance(naissance).build();
+        assertEquals(personnel.getNaissance(), naissance);
     }
 }

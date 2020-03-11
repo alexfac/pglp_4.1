@@ -16,5 +16,3 @@ out/
 *.iml
 *.ipr
 *.iws
-
-checkstyle.xml

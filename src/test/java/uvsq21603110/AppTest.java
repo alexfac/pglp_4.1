@@ -34,4 +34,20 @@ public class AppTest
         Personnel personnel = new Personnel.Builder("Test", "Test", "Testeur").addNaissance(naissance).build();
         assertEquals(personnel.getNaissance(), naissance);
     }
+
+    @Test
+    public void testInitGroupe(){
+        Groupe g = new Groupe("1");
+        Personnel p = new Personnel.Builder("Test", "Test", "Testeur").build();
+        g.add2Groupe(p);
+        assertEquals(g.getNomGroupe() , "1");
+    }
+
+    @Test
+    public void testADDGroupe(){
+        Groupe g = new Groupe("1");
+        Personnel p = new Personnel.Builder("Test", "Test", "Testeur").build();
+        g.add2Groupe(p);
+        assertEquals(g.getListGroup().size() , 1);
+    }
 }
